@@ -7,6 +7,6 @@ SRCS = Main.hs
 # Main is rather big
 Main_HC_OPTS = -H110m
 
-SRC_RUNTEST_OPTS += +RTS -K3m -H20m -RTS
+SRC_RUNTEST_OPTS += +RTS -K3m -RTS
 
 include $(TOP)/mk/target.mk
