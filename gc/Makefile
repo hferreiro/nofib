@@ -1,8 +1,9 @@
 TOP = ..
 include $(TOP)/mk/boilerplate.mk
 
-SUBDIRS= circsim constraints fibheaps fulsom gc_bench happy hash lcss \
-    mutstore1 mutstore2 power spellcheck
+SUBDIRS= gc_bench hash \
+    linear \
+    mutstore1 mutstore2
 
 # Discount treejoin: runs too quickly to see any speedup beyond a few procs
 # Discount linear: heap is too small

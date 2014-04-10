@@ -32,7 +32,7 @@ EXECUTABLE_FILE = chmod +x
 #	gc
 #	smp
 #	fibon
-NoFibSubDirs = imaginary spectral real shootout
+NoFibSubDirs = imaginary spectral real shootout gc
 
 # Haskell compiler options for nofib
 NoFibHcOpts = -O2
