@@ -4,7 +4,7 @@ include $(TOP)/mk/target.mk
 
 FAST_OPTS = 12
 NORM_OPTS = 16
-SLOW_OPTS = 20  # official shootout setting
+SLOW_OPTS = 18
 
 # The benchmark game also uses -fllvm, which we can't since it might
 # not be available on the developer's machine.

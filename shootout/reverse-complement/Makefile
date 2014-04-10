@@ -8,8 +8,8 @@ SRCS = Main.hs
 # These values are only used in this file. They are ignored by the
 # executable itself.
 FAST_OPTS = 250000
-NORM_OPTS = 2500000
-SLOW_OPTS = 25000000  # official shootout setting
+NORM_OPTS = 30000000
+SLOW_OPTS = 70000000  # official shootout setting
 
 # The benchmark game also uses -fllvm, which we can't since it might
 # not be available on the developer's machine.
@@ -25,19 +25,19 @@ fasta-c : ../fasta/fasta-c.c
 revcomp-input250000.txt : fasta-c
 	./fasta-c $(FAST_OPTS) > $@
 
-revcomp-input2500000.txt : fasta-c
+revcomp-input30000000.txt : fasta-c
 	./fasta-c $(NORM_OPTS) > $@
 
-revcomp-input25000000.txt : fasta-c
+revcomp-input70000000.txt : fasta-c
 	./fasta-c $(SLOW_OPTS) > $@
 
 ifeq "$(mode)" "slow"
- INPUT_FILE = revcomp-input25000000.txt
+ INPUT_FILE = revcomp-input70000000.txt
 else
  ifeq "$(mode)" "fast"
   INPUT_FILE = revcomp-input250000.txt
  else
-  INPUT_FILE = revcomp-input2500000.txt
+  INPUT_FILE = revcomp-input30000000.txt
  endif
 endif
 

@@ -6,8 +6,8 @@ include $(TOP)/mk/boilerplate.mk
 SRCS = Main.hs
 
 FAST_OPTS = 250000
-NORM_OPTS = 2500000
-SLOW_OPTS = 25000000  # official shootout setting
+NORM_OPTS = 7000000
+SLOW_OPTS = 20000000
 
 # The benchmark game also uses -fllvm, which we can't since it might
 # not be available on the developer's machine.

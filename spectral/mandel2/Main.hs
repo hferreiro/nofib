@@ -28,7 +28,7 @@ type MandTuple = (Int,Int,Int,Int,Colour)
 
 -- size: Size of window - Square 400x400
 size :: Int
-size =  200
+size =  20000
 
 -- build_tree - Constructs mandtree
 build_tree :: Point -> Point -> MandTree

@@ -1,8 +1,10 @@
 TOP = ../..
 include $(TOP)/mk/boilerplate.mk
-PROG_ARGS = inverter 345 10n 4u 1
 include $(TOP)/mk/target.mk
 
+FAST_OPTS = inverter 345 10n 4u 1
+NORM_OPTS = inverter 345 2n 4u 1
+SLOW_OPTS = inverter 345 1n 6u 1
 
 # From: Erik van der Meer [mailto:vandermeer@greenvalley.nl]
 # Sent: 17 March 2000 08:36

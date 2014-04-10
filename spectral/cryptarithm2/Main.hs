@@ -14,10 +14,13 @@ can not ever reach valid results.
 
 module Main where
 
+import Control.Exception as E
 import Control.Monad
 import MonadState
 import Data.List
 import Data.Maybe
+import System.Environment
+import System.IO
 
 --    newtype DigitState = DigitState (Digits -> [(a,Digits))])
 -- which some might recognize as the list-of-successes parsing monad.
@@ -117,11 +120,9 @@ puzzle top bot =
 	botVal = expand bot
 	expand = foldl (\ a b -> a * 10 + look b) 0
 			
-main = putStr (
-	puzzle	["THIRTY",
-		 "TWELVE",
-		 "TWELVE",
-		 "TWELVE",
-		 "TWELVE",
-		 "TWELVE"]
-		 "NINETY")
+main = do
+  [n] <- getArgs
+  E.catch
+    (putStr (
+       puzzle	("THIRTY" : take (read n) (repeat "TWELVE")) "NINETY"))
+    (\e -> hPutStrLn stderr (show (e :: E.SomeException)))

@@ -1,5 +1,6 @@
 module Main (main) -- parstof
 where {
+import System.Environment;
 --partain: import Fast2haskell;
 #include "../Fast2haskell.hs"
     strict_show_i::Int -> [Char];
@@ -1275,6 +1276,5 @@ data
     f_zip::([t1],[t2]) -> [(t1,t2)];
     f_zip (a_x,a_y)=f_zip2 a_x a_y;
     f_main a_x=f_benchmark_main a_x;
-    c_input=(40 :: Int);
-    main = putStr (f_main c_input)
+    main = getArgs >>= putStr . f_main . read . head
 }
